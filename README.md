@@ -8,22 +8,22 @@
 
 ### Schedule
 
-| week | to-do                                                       |
-| ---- | ----------------------------------------------------------- |
-| 1st  | wireframing, simple design system, default project settings |
-| 2nd  | hosting through AWS S3, CD with gitHub action               |
-| 3rd  | common components, 'main' page layout and UI                |
-| 4th  | 'main' page layout and UI                                   |
-| 5th  | 'products' page layout and UI                               |
-| 6th  | 'products' page layout and UI                               |
-| 7th  | 'product detail' page layout and UI                         |
-| 8th  | 'product detail' page layout and UI, retrospective          |
+| week | to-do                                                |
+| ---- | ---------------------------------------------------- |
+| 1st  | wireframing, simple design, default project settings |
+| 2nd  | hosting through AWS S3, CD with gitHub action        |
+| 3rd  | common components, 'main' page layout and UI         |
+| 4th  | 'main' page layout and UI                            |
+| 5th  | 'products' page layout and UI                        |
+| 6th  | 'products' page layout and UI                        |
+| 7th  | 'product detail' page layout and UI                  |
+| 8th  | 'product detail' page layout and UI, retrospective   |
 
 <br>
 
 ### Documentations
 
-[velog.io/@suzypark](https://velog.io/@suzypark)
+-   [와이어프레이밍 (Wireframing)](https://velog.io/@suzypark/%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9D%B4%EB%B0%8D-Wireframing)
 
 <br>
 <br>
