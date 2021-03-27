@@ -9,6 +9,8 @@ on:
             - "feature/**"
             - "feat/**"
             - "feat-*"
+        paths-ignore:
+            - "README.md"
 
 jobs:
     integration:
