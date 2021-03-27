@@ -1,0 +1,83 @@
+name: CICD
+
+on:
+    push:
+        branches:
+            - master
+            - develop
+            - "feature-*"
+            - "feature/**"
+            - "feat/**"
+            - "feat-*"
+
+jobs:
+    integration:
+        if: github.event_name == 'push'
+        name: integration
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            # TODO:
+            # add proper test commands
+            #- name: Run test
+            #run: |
+            #yarn test
+
+    deploy:
+        if: github.event_name == 'push'
+        name: deploy
+        runs-on: ubuntu-latest
+        needs: integration
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v1
+              with:
+                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-region: ${{ secrets.S3_BUCKET_REGION }}
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Run build
+              run: yarn build
+            
+						- name: Create bucket
+              uses: ItsKarma/aws-cli@v1.70.0
+              with:
+                  args: s3 mb s3://slimmme
+              continue-on-error: true
+
+            - name: Allow public read
+              uses: ItsKarma/aws-cli@v1.70.0
+              with:
+                  args: s3api put-bucket-acl --acl public-read --bucket slimmme
+              continue-on-error: true
+
+            - name: Allow public read to all object
+              uses: ItsKarma/aws-cli@v1.70.0
+              with:
+                  args: s3api put-bucket-policy --bucket slimmme --policy {\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AllowPublicReadAccess\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::slimmme/*\"}]}
+              continue-on-error: true
+
+            - name: Static web hosting
+              uses: ItsKarma/aws-cli@v1.70.0
+              with:
+                  args: s3 website s3://slimmme --index-document index.html --error-document index.html
+              continue-on-error: true
+
+            - name: Deploy
+              uses: reggionick/s3-deploy@v3
+              with:
+                  folder: build
+                  bucket: slimmme
+                  bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+                  dist-id: /
+                  invalidation: /
+                  delete-removed: true
+                  no-cache: true
+                  private: true
