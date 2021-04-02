@@ -1,13 +1,8 @@
 import "./App.css";
+import { LandingPage } from "./pages";
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <p>Actions test for CD</p>
-            </header>
-        </div>
-    );
+    return <LandingPage />;
 }
 
 export default App;
