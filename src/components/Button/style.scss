@@ -1,0 +1,33 @@
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    &:disabled {
+        background-color: #bbb;
+        border-color: #bbb;
+        color: #eee;
+        cursor: not-allowed;
+    }
+    &:hover {
+        background-color: aquamarine;
+    }
+}
+
+.button-solid {
+    @extend .button;
+    background-color: $black;
+    color: $white;
+    font-weight: 600;
+}
+
+.button-gost {
+    @extend .button;
+    background-color: $white;
+    border: none;
+    color: $black;
+}

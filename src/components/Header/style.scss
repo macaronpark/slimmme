@@ -1,0 +1,21 @@
+@import "../../common/mixins";
+
+.header-wrap {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-wordmark {
+    width: 96px;
+    cursor: pointer;
+}
+
+.header-menu-bar {
+    display: none;
+
+    @include breakpoint(desktop) {
+        display: block;
+    }
+}
