@@ -1,0 +1,33 @@
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    height: 460px;
+    background-color: $borderGray;
+
+    @include breakpoint(mobile) {
+        height: 360px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 8px;
+
+        @include breakpoint(mobile) {
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    .banner-description {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+}

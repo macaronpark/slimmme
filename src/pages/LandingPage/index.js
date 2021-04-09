@@ -1,20 +1,28 @@
 import React from "react";
 import "./style.scss";
-import { Header } from "../../components";
+import {
+    Banner,
+    CategoryCarousel,
+    Footer,
+    Header,
+    Info,
+} from "../../components";
 
 const LandingPage = () => {
     return (
         <>
-            <div className="header">
+            <div className="landing-page-header">
                 <Header />
             </div>
-            <div className="wrap">
-                <div className="contents">
-                    <div className="banner">banner</div>
-                    <div className="category">category</div>
-                    <div className="category">category</div>
-                    <div className="info">info</div>
-                    <div className="footer">footer</div>
+            <div className="landing-page-wrap">
+                <div className="landing-page-content-wrap">
+                    <Banner title="title of banner" description="description" />
+                    <CategoryCarousel title="category 1" />
+                    <CategoryCarousel title="category 2" />
+                    <div className="landing-page-content-info">
+                        <Info />
+                    </div>
+                    <Footer />
                 </div>
             </div>
         </>

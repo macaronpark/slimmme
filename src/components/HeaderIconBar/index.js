@@ -12,23 +12,23 @@ import {
 const HeaderIconBar = ({ className }) => {
     return (
         <div className={className}>
-            <Button className="navi-icon-bar-button-search">
+            <Button variant="gost" className="navi-icon-bar-button-search">
                 <Search />
             </Button>
 
-            <Button className="navi-icon-bar-button-favorite">
+            <Button variant="gost" className="navi-icon-bar-button-favorite">
                 <FavoriteBorderOutlined />
             </Button>
 
-            <Button className="navi-icon-bar-button-cart">
+            <Button variant="gost" className="navi-icon-bar-button-cart">
                 <ShoppingBasketOutlined />
             </Button>
 
-            <Button className="navi-icon-bar-button-user">
+            <Button variant="gost" className="navi-icon-bar-button-user">
                 <Face />
             </Button>
 
-            <Button className="navi-icon-bar-button-menu">
+            <Button variant="gost" className="navi-icon-bar-button-menu">
                 <MenuOutlined />
             </Button>
         </div>

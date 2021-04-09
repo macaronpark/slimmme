@@ -1,0 +1,41 @@
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.info-card-wrap {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: 2px solid $black;
+    margin-bottom: 24px;
+
+    @include breakpoint(tablet) {
+        width: calc(100% / 3 - 16px);
+        max-width: 280px;
+        margin-bottom: 0;
+    }
+}
+
+.info-card-number {
+    padding: 8px 14px;
+    background-color: $black;
+    font-weight: 600;
+    width: max-content;
+    color: white;
+}
+
+.info-card-content-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.info-card-content-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.info-card-content-description {
+    font-size: 14px;
+    margin-bottom: 16px;
+}

@@ -7,7 +7,11 @@ const HeaderMenuBar = ({ className }) => {
     return (
         <div className={className}>
             {CATEGORY.map((category) => (
-                <Button key={category.id} className="navi-menu-bar-button">
+                <Button
+                    key={category.id}
+                    variant="gost"
+                    className="navi-menu-bar-button"
+                >
                     {category.name}
                 </Button>
             ))}

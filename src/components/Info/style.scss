@@ -1,0 +1,23 @@
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.info-wrap {
+    display: flex;
+}
+
+.info-content-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(tablet) {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0 40px;
+        width: 1000px;
+    }
+}

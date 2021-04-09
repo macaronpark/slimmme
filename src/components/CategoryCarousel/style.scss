@@ -1,0 +1,69 @@
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.category-carousel {
+    margin: 40px;
+
+    .category-carousel-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        .category-carousel-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .category-carousel-button {
+            padding: 0 2px;
+            background-color: white;
+            border: 1px solid $borderGray;
+        }
+        .category-carousel-button-last {
+            @extend .category-carousel-button;
+            margin-left: 4px;
+        }
+    }
+
+    .category-carousel-image-wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .category-carousel-image {
+            display: flex;
+            width: calc(100% / 2 - 8px);
+            margin-bottom: 10px;
+
+            @include breakpoint(tablet) {
+                width: calc(100% / 3 - 16px);
+                flex-wrap: nowrap;
+                margin-bottom: 0;
+            }
+
+            @include breakpoint(desktop) {
+                width: calc(100% / 4 - 16px);
+            }
+        }
+
+        .category-carousel-image-last {
+            @extend .category-carousel-image;
+            display: block;
+
+            @include breakpoint(tablet) {
+                display: none;
+            }
+
+            @include breakpoint(desktop) {
+                display: block;
+            }
+        }
+
+        .category-carousel-image-test {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
