@@ -2,27 +2,27 @@
 @import "../../common/mixins";
 
 .category-carousel {
-    margin: 40px;
+    margin: 80px 40px;
 
-    .category-carousel-header {
+    .header {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 8px;
 
-        .category-carousel-title {
+        .title {
             font-size: 18px;
             font-weight: 600;
         }
 
-        .category-carousel-button {
+        .button {
             padding: 0 2px;
             background-color: white;
             border: 1px solid $borderGray;
         }
-        .category-carousel-button-last {
-            @extend .category-carousel-button;
+        .button-last {
+            @extend .button;
             margin-left: 4px;
         }
     }
@@ -36,6 +36,8 @@
             display: flex;
             width: calc(100% / 2 - 8px);
             margin-bottom: 10px;
+            border: 1px solid $borderGray;
+            border-radius: 4px;
 
             @include breakpoint(tablet) {
                 width: calc(100% / 3 - 16px);

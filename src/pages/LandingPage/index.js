@@ -7,6 +7,7 @@ import {
     Header,
     Info,
 } from "../../components";
+import { CATEGORY } from "../../common/constants";
 
 const LandingPage = () => {
     return (
@@ -15,11 +16,16 @@ const LandingPage = () => {
                 <Header />
             </div>
             <div className="landing-page-wrap">
-                <div className="landing-page-content-wrap">
-                    <Banner title="title of banner" description="description" />
-                    <CategoryCarousel title="category 1" />
-                    <CategoryCarousel title="category 2" />
-                    <div className="landing-page-content-info">
+                <div className="content-wrap">
+                    <Banner
+                        title="slimmme 2021 S/S"
+                        description="stretch slow shimmer"
+                    />
+                    <CategoryCarousel title={CATEGORY[0].name} />
+                    <CategoryCarousel title={CATEGORY[1].name} />
+                    <CategoryCarousel title={CATEGORY[2].name} />
+                    <CategoryCarousel title={CATEGORY[3].name} />
+                    <div className="info">
                         <Info />
                     </div>
                     <Footer />
