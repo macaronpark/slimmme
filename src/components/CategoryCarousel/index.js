@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import { Button } from "../../components";
 import { ChevronLeft, ChevronRight } from "@material-ui/icons";
-import { ReactComponent as PreviewImage } from "./preview.svg";
+import { ReactComponent as PreviewImage } from "./sold-out.svg";
 
 const CategoryCarousel = ({ title }) => {
     return (
