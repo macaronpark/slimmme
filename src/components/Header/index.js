@@ -6,8 +6,8 @@ import { HeaderIconBar, HeaderMenuBar } from "../../components";
 const Header = () => {
     return (
         <div className="header-wrap">
-            <Wordmark className="header-wordmark" />
-            <HeaderMenuBar className="header-menu-bar" />
+            <Wordmark className="wordmark" />
+            <HeaderMenuBar className="menu-bar" />
             <HeaderIconBar />
         </div>
     );
