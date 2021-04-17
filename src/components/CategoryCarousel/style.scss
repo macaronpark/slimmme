@@ -2,7 +2,11 @@
 @import "../../common/mixins";
 
 .category-carousel {
-    margin: 80px 40px;
+    margin: 80px 16px;
+
+    @include breakpoint(wide) {
+        margin: 80px 0px;
+    }
 
     .header {
         display: flex;
@@ -31,13 +35,14 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        overflow: hidden;
 
         .category-carousel-image {
             display: flex;
             width: calc(100% / 2 - 8px);
             margin-bottom: 10px;
             border: 1px solid $borderGray;
-            border-radius: 4px;
+            // border-radius: 4px;
 
             @include breakpoint(tablet) {
                 width: calc(100% / 3 - 16px);
