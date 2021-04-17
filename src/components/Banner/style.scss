@@ -34,18 +34,14 @@
 
     .description {
         display: flex;
-        width: 40%;
+        width: 200px;
 
-        @include breakpoint(mobile) {
-            width: 200px;
+        @include breakpoint(tablet) {
+            width: 250px;
         }
 
         @include breakpoint(desktop) {
-            width: 30%;
-        }
-
-        @include breakpoint(wide) {
-            width: 20%;
+            width: 280px;
         }
     }
     .svg {
