@@ -41,41 +41,27 @@
 
     .category-carousel-image-wrap {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
-        overflow: hidden;
+        border-top: 1px solid $borderGray;
+        border-left: 1px solid $borderGray;
+
+        .loaf {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+
+            border-bottom: 1px solid $borderGray;
+            border-right: 1px solid $borderGray;
+
+            flex-basis: 50%;
+
+            @include breakpoint(desktop) {
+                flex-basis: 25%;
+            }
+        }
 
         .image {
-            display: flex;
-            width: calc(100% / 2 - 8px);
-            margin-bottom: 10px;
-            border: 1px solid $borderGray;
-
-            @include breakpoint(tablet) {
-                width: calc(100% / 3 - 16px);
-                flex-wrap: nowrap;
-                margin-bottom: 0;
-            }
-
-            @include breakpoint(desktop) {
-                width: calc(100% / 4 - 16px);
-            }
-        }
-
-        .image-last {
-            @extend .image;
-            display: block;
-
-            @include breakpoint(tablet) {
-                display: none;
-            }
-
-            @include breakpoint(desktop) {
-                display: block;
-            }
-        }
-
-        .image-test {
             width: 100%;
             height: 100%;
         }

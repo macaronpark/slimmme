@@ -1,20 +1,7 @@
 import React from "react";
 import "./style.scss";
-import {
-    Banner,
-    CategoryCarousel,
-    Footer,
-    Header,
-    Info,
-} from "../../components";
-import { CATEGORY } from "../../common/constants";
-import {
-    useParams,
-    useHistory,
-    useLocation,
-    useRouteMatch,
-} from "react-router-dom";
-
+import { Footer, Header } from "../../components";
+import { useRouteMatch } from "react-router-dom";
 import { ReactComponent as SoldOutMild } from "./soldout-mild.svg";
 import { ReactComponent as SoldOutVenom } from "./soldout-venom.svg";
 import { ReactComponent as SoldOutUnique } from "./soldout-unique.svg";
