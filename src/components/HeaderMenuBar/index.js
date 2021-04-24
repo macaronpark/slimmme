@@ -3,7 +3,7 @@ import "./style.scss";
 import { Button } from "..";
 import { CATEGORY } from "../../common/constants";
 
-const HeaderMenuBar = ({ className }) => {
+const HeaderMenuBar = ({ onClick, className }) => {
     return (
         <div className={className}>
             {CATEGORY.map((category) => (
@@ -11,6 +11,9 @@ const HeaderMenuBar = ({ className }) => {
                     key={category.id}
                     variant="gost"
                     className="navi-menu-bar-button"
+                    onClick={() => {
+                        onClick(category.name);
+                    }}
                 >
                     {category.name}
                 </Button>

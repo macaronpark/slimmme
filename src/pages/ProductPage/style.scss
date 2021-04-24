@@ -1,0 +1,80 @@
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.product-page-header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    border-bottom: 1px solid $borderGray;
+    background-color: white;
+}
+
+.product-page-wrap {
+    display: flex;
+
+    @include breakpoint(wide) {
+        justify-content: center;
+    }
+
+    .content-wrap {
+        width: 100vw;
+        height: 100%;
+        flex-direction: column;
+        margin-top: 56px;
+
+        @include breakpoint(wide) {
+            width: 1280px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            border-left: 1px solid $borderGray;
+        }
+
+        .loaf {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+
+            border-bottom: 1px solid $borderGray;
+            border-right: 1px solid $borderGray;
+
+            flex-basis: 50%;
+
+            @include breakpoint(tablet) {
+                flex-basis: 33.33%;
+            }
+
+            @include breakpoint(desktop) {
+                flex-basis: 25%;
+            }
+
+            .image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .title {
+                font-weight: 600;
+                font-size: 16px;
+            }
+
+            .desc {
+                font-size: 14px;
+                color: $gray;
+            }
+
+            .price {
+                font-size: 14px;
+                margin-top: 16px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

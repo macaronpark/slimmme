@@ -20,17 +20,17 @@ const CategoryCarousel = ({ title }) => {
             </div>
 
             <div className="category-carousel-image-wrap">
-                <div className="category-carousel-image">
-                    <PreviewImage className="category-carousel-image-test" />
+                <div className="image">
+                    <PreviewImage className="image-test" />
                 </div>
-                <div className="category-carousel-image">
-                    <PreviewImage className="category-carousel-image-test" />
+                <div className="image">
+                    <PreviewImage className="image-test" />
                 </div>
-                <div className="category-carousel-image">
-                    <PreviewImage className="category-carousel-image-test" />
+                <div className="image">
+                    <PreviewImage className="image-test" />
                 </div>
-                <div className="category-carousel-image-last">
-                    <PreviewImage className="category-carousel-image-test" />
+                <div className="image-last">
+                    <PreviewImage className="image-test" />
                 </div>
             </div>
         </div>
