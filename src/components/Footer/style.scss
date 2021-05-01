@@ -65,11 +65,7 @@
     }
 
     .footer-end-copyright {
-        margin-bottom: 16px;
-
-        @include breakpoint(desktop) {
-            margin-bottom: 0;
-        }
+        margin-bottom: 8px;
     }
 
     .footer-end-terms-button-wrap {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 import { Footer, Header } from "../../components";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import { ReactComponent as SoldOutMild } from "./soldout-mild.svg";
 import { ReactComponent as SoldOutVenom } from "./soldout-venom.svg";
 import { ReactComponent as SoldOutUnique } from "./soldout-unique.svg";
@@ -26,8 +26,13 @@ const dummy = {
 };
 
 const ProductPage = () => {
+    const history = useHistory();
     const { path } = useRouteMatch();
     const type = path.slice(1, path.length);
+
+    const handleProductClick = (id) => {
+        history.push(`/detail?id=${id}`);
+    };
 
     return (
         <>
@@ -39,7 +44,12 @@ const ProductPage = () => {
                     <div className="products">
                         {Array.from(Array(dummy[type].count).keys()).map(
                             (item) => (
-                                <div className="loaf">
+                                <div
+                                    className="loaf"
+                                    onClick={() =>
+                                        handleProductClick(`${item + 1}`)
+                                    }
+                                >
                                     {dummy[type].image}
                                     <div className="title">{`${type} #${
                                         item + 1
