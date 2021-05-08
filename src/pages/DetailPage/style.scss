@@ -42,22 +42,27 @@
         }
 
         .detail-pictures {
+            border: 1px solid $borderGray;
             @include breakpoint(tablet) {
                 width: calc(50% - 8px);
             }
 
             .main-frame {
-                // background-color: crimson;
+                border-bottom: 1px solid $borderGray;
             }
             .sub-frame {
-                background-color: rosybrown;
-                display: none;
+                display: flex;
+                flex-wrap: wrap;
 
                 @include breakpoint(tablet) {
-                    display: block;
-                    margin-top: 16px;
                 }
             }
+            .sub-frame-item {
+                width: calc(25%);
+                height: 100%;
+                border-bottom: 1px solid $borderGray;
+            }
+
             .image {
                 width: 100%;
                 height: 100%;
@@ -65,7 +70,6 @@
         }
 
         .detail-contents {
-            // background-color: lightcoral;
             padding: 16px;
 
             @include breakpoint(tablet) {
@@ -85,6 +89,10 @@
                 margin-top: 16px;
                 font-size: 14px;
                 font-weight: 600;
+            }
+            .product-add-to-cart-button {
+                margin-top: 24px;
+                width: 100%;
             }
         }
     }
