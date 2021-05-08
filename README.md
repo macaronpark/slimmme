@@ -33,4 +33,4 @@
 
 ## Demo
 
-Will be added soon...
+http://slimmme.s3-website.ap-northeast-2.amazonaws.com/
